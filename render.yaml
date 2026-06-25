@@ -1,7 +1,7 @@
 services:
   - type: web
     name: glamai-backend
-    runtime: java
+    env: java
     rootDir: backend
     buildCommand: ./mvnw clean package
     startCommand: java -jar target/*.jar
