@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: glamai-backend
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+glamai:
+  jwt:
+    secret: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+    expiration-ms: 86400000
+  firebase:
+    # Path to the JSON service account file. If not present, the app falls back to Mock DB mode.
+    credential-path: classpath:firebase-service-account.json
+  cloudinary:
+    cloud-name: ${CLOUDINARY_CLOUD_NAME:}
+    api-key: ${CLOUDINARY_API_KEY:}
+    api-secret: ${CLOUDINARY_API_SECRET:}
+  gemini:
+    api-key: ${GEMINI_API_KEY:}
+
+server:
+  port: 8080
+  error:
+    include-message: always
